@@ -28,31 +28,23 @@ class BurguerBuilder extends Component {
 	}
 
 	componentDidMount(){
+		// console.log('BurgerBuilder - componentDidMount')
 		
+		// const query = new URLSearchParams(this.props.location.search)
+		// const ingredients = {}
+		// for(let param of query.entries()){
+		// 	ingredients[param[0]] = +param[1]
+		// }
 
-		console.log('BurgerBuilder')
-		
-		const query = new URLSearchParams(this.props.location.search)
-		const ingredients = {}
-		for(let param of query.entries()){
-			ingredients[param[0]] = +param[1]
-		}
+		// if(Object.entries(ingredients).length){
+		// 	this.setState({ ingredients: ingredients})	
+		// }
 
-		if(Object.entries(ingredients).length){
-			this.setState({ ingredients: ingredients})	
-		}
-
-		else{
+		// else{
 			axios.get('https://react-my-burger-6e4d7.firebaseio.com/ingredients.json')
 				.then(response => {this.setState({ ingredients: response.data})})
 				.catch(error => {this.setState({error:true})})
-		}
-
-
-
-		
-		
-
+		// }
 	}
 
 	updatePurchaseState(ingredients){
@@ -112,36 +104,14 @@ class BurguerBuilder extends Component {
 	
 	purchaseContinueHandler = () => {
 		// console.log(this.props)
-		// this.setState({loading:true})
 		
-		// const order = {
-		// 	ingredients: this.state.ingredients,
-		// 	price: this.state.price,
-		// 	customer:{
-		// 		name:'César',
-		// 		address:{
-		// 			street: '24',
-		// 			zipCode: '97144',
-		// 			country: 'México'
-		// 		},
-		// 		email:'cesar@email.com'
-		// 	},
-		// 	deliveryMethod:'fastest'
-		// }
-
-		// axios.post('/orders.json', order)
-		// 	.then(response => {
-		// 		console.log(response)
-		// 		this.setState({loading:false, purchasing:false})
-		// 	})
-		// 	.catch(error => {
-		// 		this.setState({loading:false, purchasing:false})
-		// 	})
+		
 
 		const queryParams = []
 		for(let i in this.state.ingredients){
 			queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]))
 		}
+		queryParams.push('price=' + this.state.totalPrice)
 		const queryString = queryParams.join('&')
 
 		this.props.history.push({
