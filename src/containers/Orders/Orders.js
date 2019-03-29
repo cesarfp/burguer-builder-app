@@ -38,10 +38,9 @@ class Orders extends Component {
 					this.state.orders.map(order=>(
 						
 						<Order 
-						key={order.id}
-						ingredients={order.ingredients}
-						price={+order.price}
-
+							key={order.id}
+							ingredients={order.ingredients}
+							price={+order.price}
 						/>
 					))
 				}
