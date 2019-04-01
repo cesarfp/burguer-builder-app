@@ -73,6 +73,7 @@ class ContactData extends Component {
 					required:true
 				},
 				valid:false, 
+				validation:{},
 				touched: false
 			},
 			deliveryMethod:{
@@ -123,6 +124,11 @@ class ContactData extends Component {
 
 	checkValidity(value, rules){
 		let isValid = true
+		
+		if(!rules){
+			return true
+		}
+
 		if(rules.required){
 			isValid = value.trim() !== '' && isValid;
 		}
@@ -146,6 +152,7 @@ class ContactData extends Component {
 		const updatedFormElement = {
 			...updatedOrderForm[inputIdentifier]
 		}
+
 		updatedFormElement.value = event.target.value
 		updatedFormElement.valid = this.checkValidity(updatedFormElement.value, updatedFormElement.validation)
 		updatedFormElement.touched = true
