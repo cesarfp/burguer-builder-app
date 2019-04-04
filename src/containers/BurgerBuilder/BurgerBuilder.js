@@ -27,23 +27,9 @@ class BurguerBuilder extends Component {
 	}
 
 	componentDidMount(){
-		// console.log('BurgerBuilder - componentDidMount')
-		
-		// const query = new URLSearchParams(this.props.location.search)
-		// const ingredients = {}
-		// for(let param of query.entries()){
-		// 	ingredients[param[0]] = +param[1]
-		// }
-
-		// if(Object.entries(ingredients).length){
-		// 	this.setState({ ingredients: ingredients})	
-		// }
-
-		// else{
-			axios.get('https://react-my-burger-6e4d7.firebaseio.com/ingredients.json')
-				.then(response => {this.setState({ ingredients: response.data})})
-				.catch(error => {this.setState({error:true})})
-		// }
+		// axios.get('https://react-my-burger-6e4d7.firebaseio.com/ingredients.json')
+		// 	.then(response => {this.setState({ ingredients: response.data})})
+		// 	.catch(error => {this.setState({error:true})})
 	}
 
 	updatePurchaseState(ingredients){
