@@ -8,7 +8,6 @@ export const addIngredient = (name) => {
 		ingredientName: name
 	}
 
-	// {type:actionTypes.ADD_INGREDIENT, ingredientName:ingName}
 }
 
 export const removeIngredient = (name) => {
