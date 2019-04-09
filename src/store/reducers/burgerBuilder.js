@@ -5,7 +5,7 @@ const initialState = {
 	ingredients:null,
 	totalPrice: 4,
 	loading:false,
-		error: null
+	error: null
 }
 
 const INGREDIENT_PRICES = {
@@ -38,6 +38,22 @@ const reducer = (state = initialState, action) => {
 				totalPrice:state.totalPrice - INGREDIENT_PRICES[action.ingredientName]
 
 			}
+
+		case actionTypes.SET_INGREDIENTS:
+			return {
+				...state,
+				error:false,
+				ingredients:action.ingredients
+			}
+
+		case actionTypes.FETCH_INGREDIENTS_FAILED:
+			return {
+				...state,
+				error:true,
+			}
+
+
+
 	
 		default:
 			return state;
