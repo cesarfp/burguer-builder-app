@@ -77,7 +77,7 @@ class ContactData extends Component {
 					required:true
 				},
 				valid:false, 
-				validation:{},
+				//validation:{},
 				touched: false
 			},
 			deliveryMethod:{
