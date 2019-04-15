@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import {connect} from 'react-redux'
 
 import Layout from './hoc/Layout/Layout'
@@ -15,7 +15,7 @@ class App extends Component {
   componentDidMount(){
     this.props.onTryAutoSignup()
   }
-  
+
   render() {
     return (
       <div >
@@ -36,4 +36,4 @@ const mapDispatchToProps = dispatch => {
     onTryAutoSignup: () => dispatch(actions.authCheckState())
   }
 }
-export default connect(null, mapDispatchToProps)(App);
+export default withRouter(connect(null, mapDispatchToProps)(App));
