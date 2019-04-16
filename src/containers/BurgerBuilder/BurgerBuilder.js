@@ -1,3 +1,5 @@
+
+
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
@@ -13,7 +15,7 @@ import axios from '../../axios-orders'
 
 
 
-class BurguerBuilder extends Component {
+export class BurgerBuilder extends Component {
 	
 	state = {
 		// purchasable: false,
@@ -130,4 +132,4 @@ const mapDispatchToProps = dispatch => {
 	}
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(withErrorHandler(BurguerBuilder, axios))
+export default connect(mapStateToProps,mapDispatchToProps)(withErrorHandler(BurgerBuilder, axios))
