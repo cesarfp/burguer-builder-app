@@ -80,7 +80,7 @@ class ContactData extends Component {
 					isEmail: true
 				},
 				valid:false, 
-				validation:{},
+				//validation:{},
 				touched: false
 			},
 			deliveryMethod:{
@@ -99,10 +99,6 @@ class ContactData extends Component {
 
 		},
 		formIsValid:false,
-	}
-
-	componentDidMount(){
-		console.log('ContactData - componentDidMount',this.props)
 	}
 
 	orderHandler = (event) => {

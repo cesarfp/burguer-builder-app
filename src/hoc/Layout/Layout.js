@@ -5,8 +5,6 @@ import Aux from '../../hoc/Auxiliary/Auxiliary'
 import classes from './Layout.css'
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar'
 import SideDrawer from  '../../components/Navigation/SideDrawer/SideDrawer'
-import * as actions from '../../store/actions/index'
-
 
 class Layout extends Component {
 	state = {
